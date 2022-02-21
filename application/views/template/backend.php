@@ -13,14 +13,17 @@
     <?php foreach ($gci->css_files as $file) : ?>
         <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
     <?php endforeach; ?>
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/bootstrap/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>sketchy/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" />
+    <link type="text/css" rel="stylesheet" href="<?php echo base_url('node_modules/summernote/dist/summernote.min.css'); ?>" />
 
+    
+    <script src="<?php echo base_url('node_modules/summernote/dist/summernote.min.js') ?>"></script>
     <?php foreach ($gci->js_files as $file) : ?>
         <script src="<?php echo $file; ?>"></script>
     <?php endforeach; ?>
 
-    
+
 </head>
 
 <body>
@@ -51,7 +54,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <!-- <li><a class="dropdown-item" href="/login">Login</a></li> -->
-                        <li><a class="dropdown-item" href="<?=base_url('logout')?>">Logout</a></li>
+                        <li><a class="dropdown-item" href="<?= base_url('logout') ?>">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -61,6 +64,9 @@
 
     <div class="container-fluid mt-3 ps-5 pe-5" style="min-height: 500px;">
         <div class="row">
+            <div class="col-12">
+               <h1> <?= $title ?> </h1>
+            </div>
             <div class="col-12">
                 <?php echo $gci->output ?>
 

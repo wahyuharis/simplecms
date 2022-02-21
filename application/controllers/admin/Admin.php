@@ -9,7 +9,8 @@ class Admin extends CI_Controller
         $this->load->library('grocery_CRUD');
     }
 
-    public function tampil($output = null, $title="",$custom_js = array()) {
+    public function tampil($output = null, $title = "", $custom_js = array())
+    {
         $datatampil = array(
             'gci' => $output,
             'navtitle' => 'administrator',
@@ -20,7 +21,7 @@ class Admin extends CI_Controller
                 // 'Users' => 'admin/admin/users',
             ),
             'custom_js' => $custom_js,
-            'title'=>$title
+            'title' => $title
         );
 
 
@@ -31,9 +32,8 @@ class Admin extends CI_Controller
     {
 
 
-        $output = (object)array('output' => '' , 'js_files' => array() , 'css_files' => array());
-        $this->tampil($output);
-
+        $output = (object)array('output' => '', 'js_files' => array(), 'css_files' => array());
+        $this->tampil($output, 'Home');
     }
 
     function post()
@@ -44,14 +44,17 @@ class Admin extends CI_Controller
         $crud->set_table('post');
         $crud->set_subject('post');
 
-        $crud->set_relation_n_n('tags','post_tags_rel','tags','id_post','id_tags','tags_name');
+        $crud->set_relation_n_n('tags', 'post_tags_rel', 'tags', 'id_post', 'id_tags', 'tags_name');
 
-        $crud->add_fields('title','content','tags');
-        $crud->edit_fields('title','content','order','tags');
+        $crud->add_fields('title', 'content', 'tags');
+        $crud->edit_fields('title', 'content', 'order', 'tags');
+
+        // $crud->unset_texteditor('content');
+
+        $custom_js = array();
 
         $output = $crud->render();
-        $this->tampil($output);
-
+        $this->tampil($output, 'Post', $custom_js);
     }
 
     function tags()
@@ -64,7 +67,6 @@ class Admin extends CI_Controller
 
         $output = $crud->render();
         $this->tampil($output);
-
     }
 
     function users()
@@ -77,6 +79,5 @@ class Admin extends CI_Controller
 
         $output = $crud->render();
         $this->tampil($output);
-
     }
 }

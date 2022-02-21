@@ -62,7 +62,7 @@
 
     <div class="container-fluid mt-3 ps-5 pe-5" style="min-height: 500px;">
         <div class="row">
-            <div class="col-9">
+            <div class="col-9" >
                 <h3><?= $heading ?></h3>
                 <?= $content ?>
             </div>
@@ -70,8 +70,9 @@
                 <?php require_once 'sideright_menu.php' ?>
             </div>
         </div>
-
     </div>
+
+
 
 
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
