@@ -12,8 +12,6 @@ class Post extends CI_Controller
 	{
 		$this->load->library('frontend');
 
-		// $this->db->get('post');
-		// $this->db->order_by()
 
 		$frontend = new Frontend();
 		$frontend->set_heading('Welcome To My Blog');
