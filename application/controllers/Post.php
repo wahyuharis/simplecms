@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Home extends CI_Controller
+class Post extends CI_Controller
 {
 
 	public function __construct()
@@ -12,6 +12,8 @@ class Home extends CI_Controller
 	{
 		$this->load->library('frontend');
 
+		// $this->db->get('post');
+		// $this->db->order_by()
 
 		$frontend = new Frontend();
 		$frontend->set_heading('Welcome To My Blog');

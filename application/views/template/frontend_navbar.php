@@ -5,7 +5,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="#">Blog</a>
+    <a class="nav-link" href="<?=base_url('post/')?>">Blog</a>
 </li>
 
 <li class="nav-item">
