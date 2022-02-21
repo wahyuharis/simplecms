@@ -21,9 +21,11 @@ class Post extends CI_Controller
 		$this->db->limit($limit, $start);
 		$db = $this->db->get('post');
 
+		$db2 = $this->db->get('post');
+
 
 		$config['base_url'] = base_url('post/index/');
-		$config['total_rows'] = 100;
+		$config['total_rows'] = $db2->num_rows();
 		$config['per_page'] = $limit;
 		// print_r2($db->result_array());
 		$this->pagination->initialize($config);
