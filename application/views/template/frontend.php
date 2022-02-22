@@ -47,8 +47,8 @@
                 <ul class="navbar-nav me-auto">
                     <?php require_once 'frontend_navbar.php'; ?>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <form class="d-flex" method="get" action="<?=base_url('post')?>">
+                    <input name="search" class="form-control me-sm-2" type="text" placeholder="Search">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>

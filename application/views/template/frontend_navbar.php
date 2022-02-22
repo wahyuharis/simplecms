@@ -9,7 +9,7 @@
 </li>
 
 <li class="nav-item">
-    <a class="nav-link" href="#">Projects</a>
+    <a class="nav-link" href="<?=base_url('post/?tags=Project')?>">Projects</a>
 </li>
 
 <li class="nav-item dropdown">
@@ -17,8 +17,8 @@
         Framework Tricks
     </a>
     <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">CODEIGNITER</a>
-        <a class="dropdown-item" href="#">LARAVEL</a>
+        <a class="dropdown-item" href="<?=base_url('post/?tags=Codeigniter')?>">CODEIGNITER</a>
+        <a class="dropdown-item" href="<?=base_url('post/?tags=Laravel')?>">LARAVEL</a>
     </div>
 </li>
 

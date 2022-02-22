@@ -30,8 +30,6 @@ class Admin extends CI_Controller
 
     function index()
     {
-
-
         $output = (object)array('output' => '', 'js_files' => array(), 'css_files' => array());
         $this->tampil($output, 'Home');
     }
@@ -46,8 +44,11 @@ class Admin extends CI_Controller
 
         $crud->set_relation_n_n('tags', 'post_tags_rel', 'tags', 'id_post', 'id_tags', 'tags_name');
 
-        $crud->add_fields('title', 'content', 'tags');
-        $crud->edit_fields('title', 'content', 'order', 'tags');
+        $crud->set_field_upload('img', 'assets/uploads/files');
+        $crud->callback_before_upload(array($this, '_upload_callback'));
+
+        $crud->add_fields('title', 'img','content', 'tags');
+        $crud->edit_fields('title', 'img','content', 'order', 'tags');
 
         // $crud->unset_texteditor('content');
 
@@ -55,6 +56,26 @@ class Admin extends CI_Controller
 
         $output = $crud->render();
         $this->tampil($output, 'Post', $custom_js);
+    }
+    function _upload_callback($files_to_upload, $field_info)
+    {
+        $return = false;
+
+        $file_name = $field_info->encrypted_field_name;
+
+        $type =  $files_to_upload[$file_name]['type'];
+
+        
+
+        if($type=='image/png' ||  $type=='image/jpeg' || $type=='image/jpg' ){
+            $return = true;
+        }else
+        {
+            return 'Maaf file yang diupload harus jpg atau png';    
+        }
+
+
+        return $return;
     }
 
     function tags()

@@ -12,27 +12,26 @@ class Post extends CI_Controller
 	{
 		$this->load->library('frontend');
 		$this->load->library('pagination');
+		$this->load->model('Post_model');
 
 
 		$limit=5;
 		$page=intval($this->input->get('page'));
-		$start=page_to_start($page,$limit);
+		$search=trim($this->input->get('search'));
+		$tags=trim($this->input->get('tags'));
 
-		$this->db->limit($limit, $start);
-		$db = $this->db->get('post');
-
-		$db2 = $this->db->get('post');
-
+		$post_model=new Post_model();
+		$post_model->get_list($limit,$page,$search,$tags);
 
 		$config['base_url'] = base_url('post/index/');
-		$config['total_rows'] = $db2->num_rows();
+		$config['total_rows'] = $post_model->get_count();
 		$config['per_page'] = $limit;
-		// print_r2($db->result_array());
+
 		$this->pagination->initialize($config);
 
 		$data=array();
 		$data['pagination']=$this->pagination->create_links();
-		$data['result']=$db->result();
+		$data['result']=$post_model->get_result();
 
 		$frontend = new Frontend();
 		$frontend->set_heading('Welcome To My Blog');
