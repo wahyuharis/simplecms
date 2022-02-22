@@ -8,6 +8,7 @@ class Admin extends CI_Controller
         parent::__construct();
         $this->load->library('grocery_CRUD');
         $this->load->helper('auth_helper');
+        is_logedin();
     }
 
     private function tampil($output = null, $title = "", $custom_js = array())
