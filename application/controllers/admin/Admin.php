@@ -7,9 +7,10 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->library('grocery_CRUD');
+        $this->load->helper('auth_helper');
     }
 
-    public function tampil($output = null, $title = "", $custom_js = array())
+    private function tampil($output = null, $title = "", $custom_js = array())
     {
         $datatampil = array(
             'gci' => $output,
@@ -18,7 +19,6 @@ class Admin extends CI_Controller
                 'Home' => 'admin/admin/index',
                 'Post' => 'admin/admin/post',
                 'Tags' => 'admin/admin/tags',
-                // 'Users' => 'admin/admin/users',
             ),
             'custom_js' => $custom_js,
             'title' => $title
