@@ -38,14 +38,6 @@
             top: 0px;
             left: 0px;
         }
-
-
-        /* body {
-            background-image: url('<?= base_url('assets/wallpaperbetter.jpg') ?>');
-            background-position: 0px 0px;
-            background-repeat: repeat;
-            background-size: cover;
-        } */
     </style>
 
 </head>
