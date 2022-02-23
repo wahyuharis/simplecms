@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="<?= base_url(FRONT_FAV) ?>">
-    <link href="<?= base_url('sketchy/bootstrap.min.css') ?>" rel="stylesheet">
+    <link href="<?= base_url('cosmo/bootstrap.min.css') ?>" rel="stylesheet">
     <script src="<?= base_url('node_modules/jquery/dist/jquery.min.js') ?>"></script>
     <script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
 
@@ -15,10 +15,8 @@
             margin-top: 10px;
             height: 400px;
             width: 100%;
-            background-image: url('<?= base_url('assets/img3475j9sf9.jpg') ?>');
-            background-position: 0px 0px;
-            background-repeat: repeat;
-            background-size: cover;
+            background: transparent;
+
         }
 
         ul.no-bullets {
@@ -31,12 +29,28 @@
         ul.no-bullets>li {
             margin-bottom: 20px;
         }
+
+        #wallpaper-fixed {
+            position: fixed;
+            z-index: -1;
+            width: 100%;
+            top: 0px;
+            left: 0px;
+        }
+
+
+        /* body {
+            background-image: url('<?= base_url('assets/wallpaperbetter.jpg') ?>');
+            background-position: 0px 0px;
+            background-repeat: repeat;
+            background-size: cover;
+        } */
     </style>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><?= FRONT_NAVBRAND ?></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,9 +61,9 @@
                 <ul class="navbar-nav me-auto">
                     <?php require_once 'frontend_navbar.php'; ?>
                 </ul>
-                <form class="d-flex" method="get" action="<?=base_url('post')?>">
+                <form class="d-flex" method="get" action="<?= base_url('post') ?>">
                     <input name="search" class="form-control me-sm-2" type="text" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
         </div>
@@ -58,15 +72,15 @@
     <div id="wallpaper-front">
     </div>
 
+    <img id="wallpaper-fixed" src="<?= base_url('assets/wallpaperbetter.jpg') ?>">
 
-
-    <div class="container-fluid mt-3 ps-5 pe-5" style="min-height: 500px;">
+    <div class="container-fluid mt-3 ps-5 pe-5 pt-3" style="min-height: 500px;background-color: #fff;">
         <div class="row">
-            <div class="col-9" >
+            <div class="col-9">
                 <h3><?= $heading ?></h3>
                 <?= $content ?>
             </div>
-            <div class="col-3">
+            <div class="col-3 pt-3">
                 <?php require_once 'sideright_menu.php' ?>
             </div>
         </div>

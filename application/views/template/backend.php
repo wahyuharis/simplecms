@@ -13,7 +13,7 @@
     <?php foreach ($gci->css_files as $file) : ?>
         <link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
     <?php endforeach; ?>
-    <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>sketchy/bootstrap.min.css" />
+    <!-- <link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>sketchy/bootstrap.min.css" /> -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/custom.css'); ?>" />
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('node_modules/summernote/dist/summernote.min.css'); ?>" />
 
@@ -22,8 +22,6 @@
     <?php foreach ($gci->js_files as $file) : ?>
         <script src="<?php echo $file; ?>"></script>
     <?php endforeach; ?>
-
-
 </head>
 
 <body>
