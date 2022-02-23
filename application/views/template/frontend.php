@@ -13,7 +13,7 @@
     <style>
         #wallpaper-front {
             margin-top: 10px;
-            height: 400px;
+            height: 300px;
             width: 100%;
             background: transparent;
 
@@ -34,6 +34,7 @@
             position: fixed;
             z-index: -1;
             width: 100%;
+            height: 50%;
             top: 0px;
             left: 0px;
         }
