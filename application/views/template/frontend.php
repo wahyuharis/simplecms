@@ -6,9 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="<?= base_url(FRONT_FAV) ?>">
-    <link href="<?= base_url('cosmo/bootstrap.min.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= base_url('cosmo/bootstrap.min.css') ?>" rel="stylesheet"> -->
+    <link href="<?= base_url('sketchy/bootstrap.min.css') ?>" rel="stylesheet">
+    <!-- <link href="<?= base_url('particlejs/particles-style.css') ?>" rel="stylesheet"> -->
+    <link href="<?= base_url('awan/awan.css') ?>" rel="stylesheet">
+    
+
     <script src="<?= base_url('node_modules/jquery/dist/jquery.min.js') ?>"></script>
     <script src="<?= base_url('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js') ?>"></script>
+    <!-- <script src="<?= base_url('particlejs/particles.min.js') ?>"></script> -->
+    <script src="<?= base_url('awan/awan.js') ?>"></script>
 
     <style>
         #wallpaper-front {
@@ -43,7 +50,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><?= FRONT_NAVBRAND ?></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,10 +69,28 @@
         </div>
     </nav>
 
-    <div id="wallpaper-front">
-    </div>
+    <!-- <div id="wallpaper-front">
+    </div> -->
 
-    <img id="wallpaper-fixed" src="<?= base_url('assets/wallpaperbetter.jpg') ?>">
+    <!-- <img id="wallpaper-fixed" src="<?= base_url('assets/wallpaperbetter.jpg') ?>"> -->
+
+    <!-- <div id="particles-js">
+        <canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;">
+        </canvas>
+    </div> -->
+
+    <div id="canvas-awan">
+        <!-- <img src="awan/background.png" id="bg-langit" > -->
+        <img src="<?=base_url()?>/awan/sun.png" id="bg-sun" >
+        <img src="<?=base_url()?>/awan/awan.png" id="bg-awan1" >
+        <img src="<?=base_url()?>/awan/awan.png" id="bg-awan2" >
+
+        <img src="<?=base_url()?>/awan/awan.png" id="bg-awan3" >
+
+        <img src="<?=base_url()?>/awan/awan.png" id="bg-awan31" >
+        <img src="<?=base_url()?>/awan/awan.png" id="bg-awan32" >
+
+    </div>
 
     <div class="container-fluid mt-3 ps-5 pe-5 pt-3" style="min-height: 500px;background-color: #fff;">
         <div class="row">
@@ -97,6 +122,9 @@
             </ul>
         </div>
     </nav>
+
+    <script src="<?= base_url('particlejs/particles-implement.js') ?>"></script>
+
 
 </body>
 

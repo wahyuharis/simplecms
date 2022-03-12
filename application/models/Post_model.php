@@ -62,4 +62,16 @@ class Post_model extends CI_Model
 
         return $this;
     }
+
+    function get_detail($slug){
+        $this->db->where('slug', $slug);
+        $this->db->where('deleted', 0);
+		$db = $this->db->get('post');
+
+        if($db->num_rows()>0){
+            return $db->row();
+        }else{
+            return false;
+        }
+    }
 }

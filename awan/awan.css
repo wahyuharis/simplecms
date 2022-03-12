@@ -1,0 +1,69 @@
+body{
+    margin: 0px;
+}
+
+#canvas-awan{
+    width: 100%;
+    display: block;
+    height: 300px;
+    background-color: #90b8e5;
+    position: relative;
+    overflow: hidden;
+}
+
+#bg-langit{
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    z-index: 1;
+}
+
+#bg-sun{
+    width: 100px;
+    top: 20px;
+    right: 3%;
+    position: absolute;
+    z-index: 2;
+}
+
+#bg-awan1{
+    width: 149px;
+    top: 55px;
+    left: -200px;
+    position: absolute;
+    z-index: 3;
+}
+#bg-awan2{
+    width: 114px;
+    top: 104px;
+    left: -320px;
+    position: absolute;
+    z-index: 3;
+}
+#bg-awan3{
+    width: 76px;
+    top: 163px;
+    left: -100px;
+    position: absolute;
+    z-index: 3;
+}
+
+#bg-awan31{
+    width: 76px;
+    top: 229px;
+    left: 500px;
+    position: absolute;
+    z-index: 3;
+}
+
+
+#bg-awan32{
+    width: 76px;
+    top: 77px;
+    left: 774px;
+    position: absolute;
+    z-index: 3;
+}
+

@@ -1,18 +1,13 @@
-<?php foreach ($result as $row) { ?>
-
-    <div class="row">
-        <div class="col-12 mt-2 mb-2 blog_details">
-            <a href="<?=base_url('post/detail/')?>" >
-                <h5><?= $row->title ?></h5>
-                <?= getFirstParagraph($row->content) ?>
-            </a>
-            <hr>
-        </div>
+<div class="row">
+    <div class="col-12 mt-2 mb-2 blog_details">
+        <img width="100%" src="<?=base_url('assets/uploads/files/'.$img)?>" >
     </div>
-
-<?php } ?>
-
-<?= $pagination ?>
+</div>
+<div class="row">
+    <div class="col-12 mt-2 mb-2 blog_details">
+            <?= $content_detail ?>
+    </div>
+</div>
 
 
 <script>

@@ -48,8 +48,21 @@ class Admin extends CI_Controller
         $crud->set_field_upload('img', 'assets/uploads/files');
         $crud->callback_before_upload(array($this, '_upload_callback'));
 
-        $crud->add_fields('title', 'img','content', 'tags');
-        $crud->edit_fields('title', 'img','content', 'order', 'tags');
+        $crud->add_fields('slug','title', 'img','content', 'tags');
+        $crud->edit_fields('slug','title', 'img','content', 'order', 'tags');
+
+        // $crud->unique_fields(array('slug','title'));
+
+        $crud->callback_before_insert(array($this, '_submit_callback'));
+        $crud->callback_before_update(array($this, '_submit_callback'));
+
+        $crud->callback_edit_field('slug', function ($value, $primary_key) {
+            return '<input type="text" readonly="" value="'.$value.'" name="slug" class="form-control disabled">';
+        });
+
+        $crud->callback_add_field('slug', function ($value, $primary_key) {
+            return '<input type="text"  readonly="" value="'.$value.'" name="slug" class="form-control  disabled">';
+        });
 
         // $crud->unset_texteditor('content');
 
@@ -78,6 +91,14 @@ class Admin extends CI_Controller
 
         return $return;
     }
+
+    function _submit_callback($post_array, $primary_key=null) {
+
+        $post_array['slug'] = slugify($post_array['title']);
+
+        return $post_array;
+    }
+    
 
     function tags()
     {

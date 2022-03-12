@@ -45,4 +45,27 @@ class Post extends CI_Controller
 
 		$frontend->render();
 	}
+
+	function detail($slug)
+	{
+		$this->load->library('frontend');
+
+		$this->load->model('Post_model');
+		$post_model = new Post_model();
+		$detail = $post_model->get_detail(trim($slug));
+
+		if (!$detail) {
+			redirect('z404');
+		}
+
+		$data_view=array();
+		$data_view['content_detail']=$detail->content;
+		$data_view['img']=$detail->img;
+
+		$frontend = new Frontend();
+		$frontend->set_heading($detail->title);
+		$frontend->load_view('content/detail',$data_view);
+
+		$frontend->render();
+	}
 }
